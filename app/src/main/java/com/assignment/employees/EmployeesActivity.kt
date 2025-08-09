@@ -1,13 +1,13 @@
-package com.example.test
+package com.assignment.employees
 
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.test.Model.EmployeeLoadingState
-import com.example.test.Model.EmployeesViewModel
-import com.example.test.databinding.EmployeesActivityBinding
+import com.assignment.employees.Model.EmployeeLoadingState
+import com.assignment.employees.Model.EmployeesViewModel
+import com.assignment.employees.databinding.EmployeesActivityBinding
 
 const val LOG_TAG_ACTIVITY_E = "EmployeesActivity"
 class EmployeesActivity : AppCompatActivity() {

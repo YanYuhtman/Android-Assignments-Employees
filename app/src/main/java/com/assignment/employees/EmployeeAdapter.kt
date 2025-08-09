@@ -1,4 +1,4 @@
-package com.example.test
+package com.assignment.employees
 
 import android.graphics.drawable.Drawable
 import android.util.Log
@@ -8,9 +8,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.RequestBuilder
-import com.example.test.Model.Employee
-import com.example.test.databinding.EmployeeExtendedViewHolderBinding
-import com.example.test.databinding.EmployeeViewHolderBinding
+import com.assignment.employees.Model.Employee
+import com.assignment.employees.databinding.EmployeeExtendedViewHolderBinding
+import com.assignment.employees.databinding.EmployeeViewHolderBinding
 
 const val LOG_TAG_ADAPTER_E = "EmployeesAdapter"
 abstract class AbstractEmployeeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){

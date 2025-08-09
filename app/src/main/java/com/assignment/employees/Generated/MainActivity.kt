@@ -1,4 +1,4 @@
-package com.example.test.Generated
+package com.assignment.employees.Generated
 
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
@@ -9,8 +9,8 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
-import com.example.test.R
-import com.example.test.databinding.ActivityMainBinding
+import com.assignment.employees.R
+import com.assignment.employees.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
