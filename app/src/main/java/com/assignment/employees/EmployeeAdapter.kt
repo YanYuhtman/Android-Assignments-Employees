@@ -12,23 +12,23 @@ import com.assignment.employees.Model.Employee
 import com.assignment.employees.databinding.EmployeeExtendedViewHolderBinding
 import com.assignment.employees.databinding.EmployeeViewHolderBinding
 
-const val LOG_TAG_ADAPTER_E = "EmployeesAdapter"
+const val LOG_TAG_ADAPTER_E = "[EmployeesAdapter]"
 abstract class AbstractEmployeeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
 
 
     open fun bind(adapter: EmployeeAdapter,employee: Employee){
-        var view = itemView.findViewById<View>(R.id.content)
+        val view = itemView.findViewById<View>(R.id.content)
         fun updateViewState(){
             employee.isExpanded = !employee.isExpanded
             adapter.notifyItemChanged(adapterPosition)
         }
         view.setOnLongClickListener {
-            Log.e("[Test]","Item $itemView longClicked")
+            Log.e(LOG_TAG_ADAPTER_E,"Item $itemView longClicked")
             updateViewState()
             return@setOnLongClickListener true
         }
         view.setOnClickListener {
-            Log.e("[Test]","Item $itemView clicked")
+            Log.e(LOG_TAG_ADAPTER_E,"Item $itemView clicked")
             updateViewState()
         }
     }
@@ -43,23 +43,11 @@ class EmployeeViewHolder(itemView: View) : AbstractEmployeeViewHolder(itemView) 
         binding.textViewEmployeeTeam.text = employee.team
         binding.textViewEmployeeEmail.text = employee.emailAddress
 
-        // Load image using Glide (or your preferred library)
         employee.photoUrlSmall?.let { url ->
             Glide.with(itemView.context)
                 .load(url)
-//                .placeholder(R.drawable.ic_employee_placeholder)
-//                .error(R.drawable.ic_employee_placeholder)
-                .circleCrop() // Optional: if you want circular images
+                .circleCrop()
                 .into(binding.imageViewEmployeePhoto)
-        } ?: run {
-            // Set a default placeholder if URL is null
-//            employeePhoto.setImageResource(R.drawable.ic_employee_placeholder)
-        }
-
-        // Set an OnClickListener if you want items to be clickable
-        itemView.setOnClickListener {
-            // Handle item click, e.g., navigate to employee detail screen
-            // You might want to pass a listener from your adapter
         }
     }
 

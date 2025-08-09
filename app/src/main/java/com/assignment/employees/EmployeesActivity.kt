@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.assignment.employees.databinding.EmployeesActivityBinding
 
-const val LOG_TAG_ACTIVITY_E = "EmployeesActivity"
+const val LOG_TAG_ACTIVITY_E = "[EmployeesActivity]"
 class EmployeesActivity : AppCompatActivity() {
 
     lateinit var binding: EmployeesActivityBinding
