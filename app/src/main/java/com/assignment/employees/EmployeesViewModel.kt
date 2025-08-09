@@ -1,9 +1,11 @@
-package com.assignment.employees.Model
+package com.assignment.employees
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.assignment.employees.Model.Employee
+import com.assignment.employees.Model.EmployeeRepository
 import kotlinx.coroutines.launch
 
 enum class EmployeeLoadingState{
@@ -22,7 +24,7 @@ class EmployeesViewModel: ViewModel() {
     init {
         viewModelScope.launch {
             loadingState.postValue(EmployeeLoadingState.LOADING)
-            var result = EmployeeRepository.fetchEmployees()
+            var result = EmployeeRepository.Companion.fetchEmployees()
             result.onSuccess {
                 employees =result.getOrDefault(emptyList<Employee>())
                 loadingState.postValue(EmployeeLoadingState.LOADED)
@@ -37,7 +39,7 @@ class EmployeesViewModel: ViewModel() {
     private fun loadEmployees(reload: Boolean = false) {
         viewModelScope.launch {
             loadingState.postValue(if (reload) EmployeeLoadingState.RELOADING else EmployeeLoadingState.LOADING)
-            var result = EmployeeRepository.fetchEmployees()
+            var result = EmployeeRepository.Companion.fetchEmployees()
             result.onSuccess {
                 employees =result.getOrDefault(emptyList<Employee>())
                 loadingState.postValue(EmployeeLoadingState.LOADED)

@@ -5,8 +5,6 @@ import android.util.Log
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.assignment.employees.Model.EmployeeLoadingState
-import com.assignment.employees.Model.EmployeesViewModel
 import com.assignment.employees.databinding.EmployeesActivityBinding
 
 const val LOG_TAG_ACTIVITY_E = "EmployeesActivity"
