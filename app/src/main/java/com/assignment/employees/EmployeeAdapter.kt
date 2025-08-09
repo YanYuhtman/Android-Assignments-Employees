@@ -17,17 +17,16 @@ abstract class AbstractEmployeeViewHolder(itemView: View) : RecyclerView.ViewHol
 
 
     open fun bind(adapter: EmployeeAdapter,employee: Employee){
-        val view = itemView.findViewById<View>(R.id.content)
         fun updateViewState(){
             employee.isExpanded = !employee.isExpanded
             adapter.notifyItemChanged(adapterPosition)
         }
-        view.setOnLongClickListener {
+        itemView.setOnLongClickListener {
             Log.e(LOG_TAG_ADAPTER_E,"Item $itemView longClicked")
             updateViewState()
             return@setOnLongClickListener true
         }
-        view.setOnClickListener {
+        itemView.setOnClickListener {
             Log.e(LOG_TAG_ADAPTER_E,"Item $itemView clicked")
             updateViewState()
         }
